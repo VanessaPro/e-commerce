@@ -1,0 +1,52 @@
+{
+    "produtos":[
+        {
+            "id":1,
+            "title":"Anel Solitário Prata Pedra Branca",
+            "description":"Prata 925, Cor da pedra branca, largura:1,7mm",
+            "price":"R$159,90",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/a/n/anel-solitario-prata-pedra-branca.jpg?quality=100"
+        },
+        {
+            "id":2,
+            "title":"Alianças Casamento",
+            "description":"Linha Classic Ouro 2mm Abaulada Polida",
+            "price":"R$1.300,90",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/a/l/aliancas-casamento-linha-classic-ouro-2mm-abaulada-polida.jpg?quality=100"
+        },
+        {
+            "id":3,
+            "title":"Pulseira Ouro",
+            "description":"18K Piastrine 21 cm",
+            "price":"R$300,00",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/p/u/pulseira-ouro-18k-piastrine-21-cm-vj9975_1.jpg?quality=100"
+        },
+        {
+            "id":4,
+            "title":"Pulseira Prata Infinito",
+            "description":"Pedras Brancas, pedra:Zircônia",
+            "price":"R$200,00",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/p/u/pulseira-prata-infinito-com-pedras-brancas.jpg?quality=100"
+        },
+        {
+            "id":5,
+            "title":"Brincos Ouro 18K Infantil Bolinha 4,0 mm",
+            "description":"Sem pedras,peso:0,3gramas",
+            "price":"R$250,00",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/v/j/vj5694thumb.jpg?quality=100"
+
+        },
+        {
+            "id":6,
+            "title":"Brinco Pedra Ouro 18K 5mm Verde Esmeralda",
+            "description":"Pedra:Zircônia,corda da pedra:Verde",
+            "price":"R$399,00",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/b/r/brinco-pedra-ouro-18k-5mm-verde-esmeralda.jpg?quality=100"
+
+        }
+
+
+
+
+    ]
+}
