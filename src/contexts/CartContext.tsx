@@ -1,6 +1,6 @@
 import {createContext, ReactNode, useState} from 'react'
-import {Home} from '../pages/home'
-import { ProdutosProps } from '../pages/home/index';
+import {ProdutosProps} from '../pages/home'
+
 
 interface CartContextData{
     cart:CartProps[];
@@ -16,6 +16,7 @@ interface CartProps{
     description:string;
     price:number;
     cover:string;
+    amount:number;
     total:number;
   }
 
@@ -48,8 +49,8 @@ function CartProvider({children} : CartProviderProps){
         // adicionar o item na lista
         let data = {
            ...newItem,
-            amount:1,
-            total: newItem.price
+           amount: 1,
+           total: newItem.price
 
         }
 

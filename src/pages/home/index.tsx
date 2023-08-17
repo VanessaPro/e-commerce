@@ -19,7 +19,7 @@ export function Home() {
       useEffect(() => {
         async function getProdutos(){
          
-          const response = await api.get("/produtos")   //await api.get("/produtos")
+          const response = await api.get("/produtos")  //await api.get("/produtos")
           setProdutos(response.data)
           
         }
