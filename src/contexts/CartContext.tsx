@@ -1,13 +1,14 @@
 import {createContext, ReactNode, useState} from 'react'
-import {ProdutosProps} from '../pages/home'
+import {ProductProps} from '../pages/home'
 
 
 interface CartContextData{
     cart:CartProps[];
     cartAmount:number;
-    addItemCart:(newItem: ProdutosProps) => void;
-    
-    
+    addItemCart:(newItem: ProductProps) => void;
+    removeItemCart:(product: CartProps) => void;
+    total:string;
+      
 }
 
 interface CartProps{
@@ -28,40 +29,79 @@ interface CartProps{
 export const CartContext = createContext({} as CartContextData)
 
 function CartProvider({children} : CartProviderProps){
-     const [cart, setCart] = useState<CartProps[]>([])
+    const [cart, setCart] = useState<CartProps[]>([])
+    const [total, setTotal] = useState("");
 
-     function addItemCart(newItem: ProdutosProps){
-        //adiciona ao carrinho
-        //se já existe ele no carrinho
-        const indexItem= cart.findIndex(item => item.id === newItem.id)
+    function addItemCart(newItem: ProductProps){
+      const indexItem  = cart.findIndex(item => item.id === newItem.id)
 
-        if(indexItem !== -1){
-            // Se entrou apenas somamos +1 na quantidade e calculamos o total desse carrinho.
-            let  cartList = cart;
+      if(indexItem !== -1){
+          const cartList = cart;
 
-            cartList[indexItem].amount = cartList[indexItem].amount +1;
-            cartList[indexItem].total = cartList[indexItem].amount * cartList[indexItem].price;
+          cartList[indexItem].amount = cartList[indexItem].amount + 1;
+          cartList[indexItem].total = cartList[indexItem].amount * cartList[indexItem].price;
 
-            setCart(cartList)
-            return;
-        }
+          setCart(cartList)
+          totalResultCart(cartList);
+          return;
+      }
 
-        // adicionar o item na lista
-        let data = {
-           ...newItem,
-           amount: 1,
-           total: newItem.price
+      // adicionar o item na lista
+      const data = {
+        ...newItem,
+        amount: 1,
+        total: newItem.price
 
-        }
+    }
 
-        setCart(produtos => [...produtos,data])
+      setCart(products => [...products,data])
+      totalResultCart([...cart, data])
 
-     }
+    }
 
+
+    function removeItemCart(product: CartProps) {
+      const indexItem = cart.findIndex(item => item.id === product.id)
+    
+      if (cart[indexItem]?.amount > 1) {
+        const cartList= cart;
+
+        cartList[indexItem].amount = cartList[indexItem].amount -1;
+        cartList[indexItem].total = cartList[indexItem].total - cartList[indexItem].price;
+   
+        
+        setCart(cartList);
+        totalResultCart(cartList)
+        return;
+      }
+
+      const removeItem = cart.filter(item => item.id !== product.id)
+      setCart(removeItem);
+      totalResultCart(removeItem)
+     
+
+    }
+    
+  
+    
+    function totalResultCart(items: CartProps[]) {
+        const myCart = items;
+        const result = myCart.reduce((acc, obj) => {return acc + obj.total}, 0)
+        const resultFormated =result.toLocaleString("pt-BR", {style: "currency", currency:"BRL"})
+        setTotal(resultFormated);
+      }
+      
 
 
     return(
-        <CartContext.Provider value={{cart, cartAmount: cart.length, addItemCart}}>
+        <CartContext.Provider 
+         value={{
+          cart, 
+          cartAmount: cart.length, 
+          addItemCart, 
+          removeItemCart, 
+          total
+          }}>
           {children}
         </CartContext.Provider>
     )

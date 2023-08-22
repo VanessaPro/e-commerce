@@ -1,49 +1,66 @@
 {
-    "produtos":[
+    "products":[
         {
             "id":1,
-            "title":"Anel Solitário Prata Pedra Branca",
+            "title":"Anel Solitário Prata Pedra Branca - Prata 925, Cor da pedra branca, largura:1,7mm ",
             "description":"Prata 925, Cor da pedra branca, largura:1,7mm",
-            "price":"R$159,90",
+            "price":"150.00",
             "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/a/n/anel-solitario-prata-pedra-branca.jpg?quality=100"
         },
         {
             "id":2,
-            "title":"Alianças Casamento",
+            "title":"Alianças Casamento - Linha Classic Ouro 2mm Abaulada Polida",
             "description":"Linha Classic Ouro 2mm Abaulada Polida",
-            "price":"R$1.300,90",
+            "price":"1300.40",
             "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/a/l/aliancas-casamento-linha-classic-ouro-2mm-abaulada-polida.jpg?quality=100"
         },
         {
             "id":3,
-            "title":"Pulseira Ouro",
+            "title":"Pulseira Ouro - 18K Piastrine 21 cm",
             "description":"18K Piastrine 21 cm",
-            "price":"R$300,00",
+            "price":"325.00",
             "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/p/u/pulseira-ouro-18k-piastrine-21-cm-vj9975_1.jpg?quality=100"
         },
         {
             "id":4,
-            "title":"Pulseira Prata Infinito",
+            "title":"Pulseira Prata Infinito - Pedras Brancas, pedra:Zircônia",
             "description":"Pedras Brancas, pedra:Zircônia",
-            "price":"R$200,00",
+            "price":"250.00",
             "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/p/u/pulseira-prata-infinito-com-pedras-brancas.jpg?quality=100"
         },
         {
             "id":5,
-            "title":"Brincos Ouro 18K Infantil Bolinha 4,0 mm",
+            "title":"Brincos Ouro 18K Infantil Bolinha 4,0 mm - Sem pedras,peso:0,3gramas",
             "description":"Sem pedras,peso:0,3gramas",
-            "price":"R$250,00",
+            "price":"270.00",
             "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/v/j/vj5694thumb.jpg?quality=100"
 
         },
         {
             "id":6,
-            "title":"Brinco Pedra Ouro 18K 5mm Verde Esmeralda",
+            "title":"Brinco Pedra Ouro 18K 5mm Verde Esmeralda - Pedra:Zircônia,corda da pedra:Verde",
             "description":"Pedra:Zircônia,corda da pedra:Verde",
-            "price":"R$399,00",
+            "price":"390.00",
             "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/b/r/brinco-pedra-ouro-18k-5mm-verde-esmeralda.jpg?quality=100"
 
+        },
+        {
+            "id":7,
+            "title":"Colar Prata Ponto de Luz com Pedras Brancas e Pedra Verde",
+            "description":"Pedras Brancas e Pedra Verde",
+            "price":"350.00",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/c/o/colar-prata-ponto-de-luz-com-pedras-brancas-e-pedra-verde.jpg?quality=100"
+
+        },
+        {
+            "id":8,
+            "title":"Tornozeleira com Pingentes Borboleta Ouro",
+            "description":"Ouro",
+            "price":"1322.91",
+            "cover":"https://virtualjoias.com/media/catalog/product/cache/2606ad8a2e237282be5631f3e1487bf0/v/j/vj10061thumb.jpg?quality=100"
+
         }
+
 
 
 
