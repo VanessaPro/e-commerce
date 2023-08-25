@@ -10,8 +10,8 @@ export function Header(){
     return(
         <header className='w-full bg-pink-200'>
             <nav className='w-full max-w-7xl h-14 flex items-center justify-between px-5 mx-auto'>
-                <Link className="font-bold text-2xl" to="/">
-                  Casa das Joias
+                <Link className="font-semibold text-yellow-500 text-2xl "  to="/">
+                  Casa das Joias 
                 </Link>
                  <Link className="relative" to="/cart">
                  

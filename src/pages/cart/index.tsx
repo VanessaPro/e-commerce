@@ -23,7 +23,7 @@ export function Cart(){
                 <section key={item.id} className="flex items-center justify-between border-b-2 border-gray-300">
                 <img src={item.cover} alt={item.title} className= "w-28"/>
                 <p className= "w-28">{item.description}</p>
-                <strong>Preço:{item.price}</strong>
+                <strong>Preço:R${item.price}</strong>
 
                 <div className="flex items-center justify-center gap-3">
                     <button 
@@ -41,12 +41,13 @@ export function Cart(){
                     </button>
                 </div>
 
-                    <strong className=" float-right">
-                    SubTotal: {item.total.toLocaleString("pt-BR", {style:"currency", currency:"BRL"})}
-                    </strong>
+                  <strong className="float-right">
+                    SubTotal: {item.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                 </strong>
+                 
                 </section>
             ))}
-            {cart.length !== 0 && <p className="font-bold mt-4">Total:{total}</p>}
+            {cart.length !== 0  && <p className="font-bold mt-4">Total: {total} </p>}
         </div>
 
            

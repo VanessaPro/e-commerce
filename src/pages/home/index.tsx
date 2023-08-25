@@ -3,6 +3,7 @@ import {BsCartPlus} from 'react-icons/bs'
 import {api} from '../../services/api'
 import{CartContext} from '../../contexts/CartContext'
 
+import toast from 'react-hot-toast'
 
 
 export interface ProductProps{
@@ -31,6 +32,14 @@ export function Home() {
   }, []);
 
   function handleAddCartItem(product: ProductProps){
+    toast.success("Produto adicionado no carrinho", {
+      style:{
+        borderRadius:10,
+        backgroundColor:"#121212",
+        color:'blue'
+
+      }
+    })
     addItemCart(product);
   }
 
@@ -55,7 +64,7 @@ return (
             currency:"BRL"
             })}
           </strong>
-          <button className='bg-zinc-900 p-1 rounded ' onClick={() => handleAddCartItem(product) } >
+          <button className='bg-zinc-900 p-1 rounded ' onClick={ () => handleAddCartItem(product) } >
             <BsCartPlus size={20} color="#fff"/>
           </button>  
 

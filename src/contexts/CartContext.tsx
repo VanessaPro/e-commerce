@@ -28,37 +28,33 @@ interface CartProps{
 
 export const CartContext = createContext({} as CartContextData)
 
-function CartProvider({children} : CartProviderProps){
+function CartProvider({ children }: CartProviderProps){
     const [cart, setCart] = useState<CartProps[]>([])
     const [total, setTotal] = useState("");
 
-    function addItemCart(newItem: ProductProps){
-      const indexItem  = cart.findIndex(item => item.id === newItem.id)
-
-      if(indexItem !== -1){
-          const cartList = cart;
+   function addItemCart(newItem: ProductProps) {
+     const indexItem = cart.findIndex(item => item.id === newItem.id);
+  
+        if (indexItem !== -1){
+          let cartList = cart;
 
           cartList[indexItem].amount = cartList[indexItem].amount + 1;
           cartList[indexItem].total = cartList[indexItem].amount * cartList[indexItem].price;
 
-          setCart(cartList)
-          totalResultCart(cartList);
+          setCart(cartList);
+          totalResultCart(cartList); 
           return;
-      }
+        }
 
-      // adicionar o item na lista
-      const data = {
-        ...newItem,
-        amount: 1,
-        total: newItem.price
+        let date = {
+          ...newItem,
+          amount: 1,
+          total: newItem.price
+        }
 
-    }
-
-      setCart(products => [...products,data])
-      totalResultCart([...cart, data])
-
-    }
-
+        setCart(products => [...products, date])
+        totalResultCart([...cart, date]);
+  }
 
     function removeItemCart(product: CartProps) {
       const indexItem = cart.findIndex(item => item.id === product.id)
@@ -71,7 +67,7 @@ function CartProvider({children} : CartProviderProps){
    
         
         setCart(cartList);
-        totalResultCart(cartList)
+        totalResultCart(cartList); 
         return;
       }
 
@@ -82,14 +78,12 @@ function CartProvider({children} : CartProviderProps){
 
     }
     
-  
-    
     function totalResultCart(items: CartProps[]) {
-        const myCart = items;
-        const result = myCart.reduce((acc, obj) => {return acc + obj.total}, 0)
-        const resultFormated =result.toLocaleString("pt-BR", {style: "currency", currency:"BRL"})
-        setTotal(resultFormated);
-      }
+      const result = items.reduce((acc, obj) => acc + obj.total, 0);
+      const resultFormated = result.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    
+      setTotal(resultFormated);
+    }
       
 
 
@@ -101,8 +95,9 @@ function CartProvider({children} : CartProviderProps){
           addItemCart, 
           removeItemCart, 
           total
-          }}>
-          {children}
+          }}
+          >
+            {children}
         </CartContext.Provider>
     )
 }
