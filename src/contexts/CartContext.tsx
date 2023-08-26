@@ -2,7 +2,7 @@ import {createContext, ReactNode, useState} from 'react'
 import {ProductProps} from '../pages/home'
 
 
-interface CartContextData{
+interface CartContextDate{
     cart:CartProps[];
     cartAmount:number;
     addItemCart:(newItem: ProductProps) => void;
@@ -26,35 +26,37 @@ interface CartProps{
   }
 
 
-export const CartContext = createContext({} as CartContextData)
+export const CartContext = createContext({} as CartContextDate)
 
 function CartProvider({ children }: CartProviderProps){
     const [cart, setCart] = useState<CartProps[]>([])
     const [total, setTotal] = useState("");
 
+    
+
    function addItemCart(newItem: ProductProps) {
-     const indexItem = cart.findIndex(item => item.id === newItem.id);
-  
-        if (indexItem !== -1){
-          let cartList = cart;
+  const indexItem = cart.findIndex(item => item.id === newItem.id);
 
-          cartList[indexItem].amount = cartList[indexItem].amount + 1;
-          cartList[indexItem].total = cartList[indexItem].amount * cartList[indexItem].price;
+  if (indexItem !== -1) {
+    let cartList = cart;
 
-          setCart(cartList);
-          totalResultCart(cartList); 
-          return;
-        }
+    cartList[indexItem].amount = cartList[indexItem].amount + 1;
+    cartList[indexItem].total = cartList[indexItem].amount * cartList[indexItem].price;
 
-        let date = {
-          ...newItem,
-          amount: 1,
-          total: newItem.price
-        }
-
-        setCart(products => [...products, date])
-        totalResultCart([...cart, date]);
+    setCart(cartList);
+    totalResultCart(cartList);
+    return;
   }
+
+  let date = {
+    ...newItem,
+    amount: 1,
+    total: newItem.price * 1  
+  };
+
+  setCart(products => [...products, date]);
+  totalResultCart([...cart, date]);
+}
 
     function removeItemCart(product: CartProps) {
       const indexItem = cart.findIndex(item => item.id === product.id)

@@ -41,13 +41,13 @@ export function Cart(){
                     </button>
                 </div>
 
-                  <strong className="float-right">
-                    SubTotal: {item.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
-                 </strong>
+                <strong className="float-right">
+                  SubTotal: {item.total.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })}
+                </strong>
                  
                 </section>
             ))}
-            {cart.length !== 0  && <p className="font-bold mt-4">Total: {total} </p>}
+               {cart.length !== 0  && <p className="font-bold mt-4">Total: {total} </p>}
         </div>
 
            
